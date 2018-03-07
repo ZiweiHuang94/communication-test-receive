@@ -1,0 +1,21 @@
+Start testing: Mar 07 11:46 CET
+----------------------------------------------------------
+1/1 Testing: communication-test-receive-runner
+1/1 Test: communication-test-receive-runner
+Command: "/home/ziwei/Docker/communication-test-receive/build/communication-test-receive-runner"
+Directory: /home/ziwei/Docker/communication-test-receive/build
+"communication-test-receive-runner" start time: Mar 07 11:46 CET
+Output:
+----------------------------------------------------------
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"communication-test-receive-runner" end time: Mar 07 11:46 CET
+"communication-test-receive-runner" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Mar 07 11:46 CET

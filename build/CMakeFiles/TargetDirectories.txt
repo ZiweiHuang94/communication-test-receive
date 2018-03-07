@@ -1,0 +1,10 @@
+/home/ziwei/Docker/communication-test-receive/build/CMakeFiles/edit_cache.dir
+/home/ziwei/Docker/communication-test-receive/build/CMakeFiles/test.dir
+/home/ziwei/Docker/communication-test-receive/build/CMakeFiles/rebuild_cache.dir
+/home/ziwei/Docker/communication-test-receive/build/CMakeFiles/communication-test-receive-core.dir
+/home/ziwei/Docker/communication-test-receive/build/CMakeFiles/communication-test-receive.dir
+/home/ziwei/Docker/communication-test-receive/build/CMakeFiles/list_install_components.dir
+/home/ziwei/Docker/communication-test-receive/build/CMakeFiles/install.dir
+/home/ziwei/Docker/communication-test-receive/build/CMakeFiles/communication-test-receive-runner.dir
+/home/ziwei/Docker/communication-test-receive/build/CMakeFiles/install/local.dir
+/home/ziwei/Docker/communication-test-receive/build/CMakeFiles/install/strip.dir

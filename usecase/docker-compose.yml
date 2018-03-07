@@ -1,0 +1,7 @@
+version: '2'
+
+services:
+    communication-test-receive:
+        image: ${IMAGE}
+        network_mode: "host"
+        command: "communication-test-receive --cid=${CID}"
