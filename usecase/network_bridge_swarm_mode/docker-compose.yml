@@ -1,0 +1,26 @@
+version: '3'
+
+networks:
+  bridge:
+    external:
+      name: mybridge
+
+services:
+    communication-test-send:
+        image: ziwei000/opendlv.io-multi:communication-test-send
+        command: "communication-test-send --cid=112"
+        deploy:
+          placement:
+            constraints: [node.role == manager]
+        networks:
+          - bridge
+
+
+    communication-test-receive:
+        image: ziwei000/opendlv.io-multi:communication-test-receive
+        command: "communication-test-receive --cid=112"
+        deploy:
+          placement:
+            constraints: [node.role == manager]
+        networks:
+          - bridge 

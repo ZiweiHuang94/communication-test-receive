@@ -1,0 +1,7 @@
+version: '2'
+
+services:
+    communication-test-receive:
+        image: ziwei000/opendlv.io-multi:communication-test-send
+        network_mode: "host"
+        command: "communication-test-send --cid=112"
