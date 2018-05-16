@@ -11,7 +11,7 @@ addons:
 
 install:
 - docker build -f Dockerfile.amd64 -t communication-test-receive .
-- docker run --name test communication-test-receive communication-test-receive --cid=112 
+- docker run -d --name test communication-test-receive communication-test-receive --cid=112 
 
 script:
 - docker ps | grep -q test
