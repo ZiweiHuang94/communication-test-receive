@@ -1,6 +1,12 @@
-sudo: required
+os: linux
 
 language: cpp
+
+sudo: required
+
+branches:
+  only:
+    - master
 
 services:
   - docker
@@ -8,9 +14,12 @@ services:
 addons:
   apt:
     update: true
+env:
+  global:
+    - COMMIT=${TRAVIS_COMMIT::7}
 
 install:
-- docker build -f Dockerfile.amd64 -t communication-test-receive .
+- docker build -f Dockerfile.amd64 -t communication-test-receive:${COMMIT} .
 - docker run -d --name test communication-test-receive communication-test-receive --cid=112 
 
 script:
