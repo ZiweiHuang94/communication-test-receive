@@ -5,24 +5,24 @@ branches:
   only:
   - master
 services:
-- docker
+  - docker
 addons:
   apt:
     update: true
 env:
   global:
   - COMMIT=${TRAVIS_COMMIT::7}
-  - IMAGE=${${TRAVIS_REPO_SLUG},,}
+  - IMAGE= `echo ${TRAVIS_REPO_SLUG},,}`
   - DOCKERHUB = ziwei000
   #DOCKER_USER
   - secure: FCldtYwugXQXxgPVCt+5JitAOktL+ue5ZGbFqltFkic/B0S2D7n7KYVyz1ZfHYIJvdazFCkCGrMokXHLo/ukxdRgsP+M3+7E3fSnsMiptB7nbBZ1ZiBsYgFPzl4pDqBxxf+cFa3Dwl1Mig/PxJT6yAobXm6CFtwlKlRDLFNUL1CIIcfKefvCEkv8CFJm+3MpKq8NlwUQleWTTGoeZFkTY28K/9atXYvn4PMQySlhk7Uch2U/xb7JJ1pJ8kqU8OdInO9UlxcO1lWCEDXHHRRim5nehLzjzzUhQcA+XONxNxZiZQKrMM98XMhyVP1yzX2VHnQ1fI+kbiueEEKObLE5dTMMpFuWm166V3+4pwIp/aMkipwjYQUELqOpARAPI5/QQhg9rpqDgnIB+aIi/wbNKw4a0XAaqRnDkUuR5rChtMeG0wu3px+Umeb7jqYsaJBSMMpCMvq6200kCfu1r38tMS9XvuNxn2QMYPc2YkY2QZOg5OVMOArKYJ0ALtoEHSPd6nqaMxw7xCmartdXVI5Ju+EhNjkWEqguPgJUva9VL0lKKtv7YGxzLvMAMZNCgMvoBsuUQsowJgk2ZNAhNkUZ3jNYyo3zwVvPB7oYF9ufWYRSC2X8RYZyc7hZAjxqUH4J+UGV57442mP9j7MjxIsK3VQLZjl1SXRRVst94pn0p2Y=
   #Docker_PASS
   - secure: TUr1Kcme+VdorKWujt9DLk05LJ5YC0Frv1DNjPVqjOs0VuUuUdhAHNBONvl7g3BcONuSzOlC+ppDIM2mmk7Nrm63Phw0DFd52t/ZCj3MAPlyshwoJvUlY8FX4zHI+xAP6feyzN9Bj2R8Mju7rygJjZQ6Zs4J+tCAcAchT6AiaxJKYRIcEut7asTlbtH0GDb4GzsmI3BuLKrqeWB3OcOr3z0A7W8IzVdDK9TzLgYTpXSc4ivuOVzFUO8myiQukavV4wX1rBnGqPH2PTudJQ0EuCKsEtMY5s3gKWM7v7lTXhtnluU/pfj31iieJj0i9Ai1cwAhXPcuvAxtSgT0kk/bixoRjLVH0nGCRBzhg7A+utNI9TceArESUHHKaOeq4sd3zowts//VKIgI1F5Ra0iNbnjI781u5O7yhM/IPSbycigyTrVZ0DMNU+8vBLN/XCiHpWT+Yr0+Jrdb7gaWonk0ZGsKgR+lNULx1fBmaBVdnQoBA0BqEHsLI2MevX1FF9WJD2eV925zeHRq8rbxVOAepiZU80FoS4yCt6W518ISeOYqOgwl+y//1AdCu9DR5VJCvCDUdnZmQNEiL9SiaX7mAGTN//FTd4h9qaElpNnNZlzoDa4bonhT93+vOJCFZoKtitTVOMiWrluqXSwQmSKWFzV2HRRNZnMOjmlWh0AsefQ=
 install:
-- docker build -f Dockerfile.amd64 -t ${IMAGE}:${COMMIT} .
-- docker run -d --name test ${IMAGE}:${COMMIT} communication-test-receive --cid=112
+  - docker build -f Dockerfile.amd64 -t ${IMAGE}:${COMMIT} .
+  - docker run -d --name test ${IMAGE}:${COMMIT} communication-test-receive --cid=112
 script:
-- docker ps | grep -q test
+  - docker ps | grep -q test
 
 after_success:
   - docker --version  # document the version travis is using
