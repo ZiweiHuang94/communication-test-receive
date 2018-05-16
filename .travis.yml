@@ -1,27 +1,28 @@
 os: linux
-
 language: cpp
-
 sudo: required
-
 branches:
   only:
-    - master
-
+  - master
 services:
-  - docker
-
+- docker
 addons:
   apt:
     update: true
 env:
   global:
-    - COMMIT=${TRAVIS_COMMIT::7}
-
+  - COMMIT=${TRAVIS_COMMIT::7}
+  - secure: '08AY4+ZQ++PFPQzkSkzUIAzIaCYyFdfV/TbS+ji2OvEcZhOlbN/5UAjb/WczluLCSdWfd/NQy2MiE35MvWRawSh+qCxTfkOfD3F2Jh3qB53bMpRb+SjA4tcQnQi40kqb+KCm3XuF2ihq+WQW5hEra5LoX/GVGX/66kLsWJ7ksAmM+IJlz1VniekP9A9eBSWDIJiYuW1RzLhMrr7LU4FK3kw/lCZygCJ66S/31NyjeKpD9nOaQ5Q4XBLq/+m3l5qHuFZnXeYkxTvTVzGGovBtqITQzBtgQKsMw6CCh6pcTCarvqvSH8Jyvw7WRGp+o6vF9II8Y3BsY3nDk4e7VaV+YHBNZsXwxNctOsfT2BJnDz+vzMhBeHmCr/4FTJcPD9FAX2PkHaYR0JkGgF3UCWtps0KhhSX6g+lnMcS3G+yAQNLEt21ghTPeeGGJrLXGGC2iTuEr7YwevagnyuforZOBt0UOJdWleXd5vyfVTNZulJJvbqJUxDJIEJv0oSZIY55yjTV+A61jsPbEnNrh7/M6m+W8Na0hpz6CpU24maoBHCbWWQGihR8gAgf/gbGM+NaAtt7QAPKXoALus+hAs1O8SLFWstel+snWc4YdE+/InFl5PhmNvgHMwROIxPOYYdhifY4JGIJSC5/LxvhNqEuDWkONiAB3vskCShO2dcwt/60='
+  - secure: fi2YtbF+8orfGkTUf4MG6NBuGjiiPejETmjjN554xFwVaEczMSPumk3hqN6UX2v+IqkaDQ5T13opcx8mNg9rk3ZHADbz88uJs4PrXERCDuTS18geApp2r1ht+HxYrY+GSTV6gMmMqBjqFaWDbK2YJz/3Or2xItiRgx2M6v7pIwqMMhju2kOcjsHDAlCY55tcpxrgFDXDWE/IfdELY1OmT1RfRt3TBArSqRxotOUt20fpFs1yu752DhiCtrzvJcDmVI34MTLkoekwBdCWaMwA0f1sJS4TpJBT7WkDs5msxokxvbWZ2zIK9up10O3RAC+V05GE51KT/wYnk/+lg+dtsg5by5IR/iLsrM2e0Rf1Rqv525Z0R8E5tbFKd3LwYP1S5/IOthnzxFxeDHNvUF8+llrh5uEZbpCSwY32ZIyus1vTVqN9aMgsPFWhGlb4pArvdkITANzBoiKR8DhkkEOqmxOgt9/C6/0OzzgFtu/ErszyJjGxdDmhqP0dVlyoEq5K8zcX+Ult0w8WIF1OK1/YDhsk0yv9wIWFARaaTZ/peoeykjok0f7znyEGr2/O2cWXM7Ge8sHqr4KHAlqEziNaMlL5udomXK9HXXX6OuleXgHjf1FxA7YTskTufLRO06eUydhfwYDWI7bQ+mvvOzNkK3XCk0MhMIlXq++mvsqddSg=
+  - secure: xRgkHbmChCQLCJTFmoWZl3YzACCCwOiUrdkk8tfJKk+JMe4IW1/6jfnXRP8/i4Uxg85w+yi8pLe0rdOOcVel09bBC9Fo43r9IH9b4o+r3UOY7KRYZwT13KLO1d7ZFLqnucExYIkWhhK04HRG5Xsdf+WAdWn6PKdtY5ofhHBN5ycyNgwTBxWA3uBP14fS/nPAmzExjVh0b7alweLM2hh2RlYABuNcDucm/aQYJfuOVmAhHZ71WGQj0nyFd+lB/NpnuuMV1eB+ygC9ddABnFDYIFURZ5+KAovADWVj3TGsLC3sF/uLH54dem1a7qYE0DQJqeRLpJ1FW9OzkkMEpQk0Pe65V/FlPL/I+fNS3YiICtPwvhw/+RC2h/HPaIzk8iej5KEHouPg8RRByzfC3WDxVxuxukYIQEpNhaD0z/7x+NyB2Sm6omk0m6NoqbHc25LTeF3jUcCjzXZT38Wg0L8vT3etQPyFMVi9Fvmr8fQx/ZkPC4xXS+BOk5nUqvrBTtzxqChqQuIBdA9uWVI+JVXH7MJmhTzHZ7ENFxPFgump8Gubv+BsT3MG4Pi+BOYnzMTiP/F5wCKwP6J0l0qoFK1vEgQV/qYBuEcio+I5ybDfEIeaSAbJChFSVkOy4dGIZ/0Phrjj+FNRhwR5pCrMtpGhcLNymHfbVif/VKUkaSZM2gs=
+  - secure: FKyF1J5lk6/IQGh/sPUvbdNKAbJ0/4N3nLc8EBxyr5Pf2jjJanutqScyLU7RidTnqQa/vbxoyBfMe/+jABbL4SMrR/r6pOcRsGEbsrl3l7F83JjA/LS2MgVXouxj1Se5OLZvUJpyG5IhV7h1UNSLcESbamwUnXvhB2B/5Ci4EzsnEzTjJDBsG4SbLXtUwT1MZVlnqVytqP1Sn12ykAI9yY0ioEMnM094CTBX02iy2DGe1uW5eTebA8UHhdhpzzoFgKQBkM7aMPeZOP9nHTogr6wpSrFiDRny9x7kTs4v2sF5/N1cA+yGxfxFupxaZpE0Apyxu5pRBdZZnPNd0rcckrMikMimHTj0wmvA5s8QV1vgSFkwvuo8wiyhCIA91A9HNy1MFyoXBKeXqvGn2E/J4MvXxgWdM1pnjyQqqIX7XVExNRudcWcqDI0nHeaUns1M8cbrSnKMHMBAreYP83cyv9IXJwb1ezJKHv1FxG8jvZ8yHxBtVIIRv+X9gVpEuXPUNLeELBXZo+mcmpzGCaSPd1M1NCJ26faiIaQy7Jq/JZ+4La/uNL2cy6dvwyQ/FEz1te5VDMyekEBEqxgWizgY9XGmMruiqRrTPSRfr+Bcnq4tYZ2NR+dHQqut22omEs/lR+EJ4flP+HuTa1UrMFv8ioEwcinsEAZHMQ3nk/Jbfag=
 install:
 - docker build -f Dockerfile.amd64 -t communication-test-receive:${COMMIT} .
-- docker run -d --name test communication-test-receive communication-test-receive --cid=112 
-
+- docker run -d --name test communication-test-receive:${COMMIT} communication-test-receive
+  --cid=112
 script:
 - docker ps | grep -q test
-
+notification:
+  email:
+    on_success: never
+    on_failure: never
