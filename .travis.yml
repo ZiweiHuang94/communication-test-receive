@@ -5,33 +5,29 @@ branches:
   only:
   - master
 services:
-  - docker
+- docker
 addons:
   apt:
     update: true
 env:
   global:
   - COMMIT=${TRAVIS_COMMIT::7}
-  #- IMAGE= `echo ${TRAVIS_REPO_SLUG},,}`
-  - DOCKERHUB = ziwei000
-  #DOCKER_USER
-  - secure: FCldtYwugXQXxgPVCt+5JitAOktL+ue5ZGbFqltFkic/B0S2D7n7KYVyz1ZfHYIJvdazFCkCGrMokXHLo/ukxdRgsP+M3+7E3fSnsMiptB7nbBZ1ZiBsYgFPzl4pDqBxxf+cFa3Dwl1Mig/PxJT6yAobXm6CFtwlKlRDLFNUL1CIIcfKefvCEkv8CFJm+3MpKq8NlwUQleWTTGoeZFkTY28K/9atXYvn4PMQySlhk7Uch2U/xb7JJ1pJ8kqU8OdInO9UlxcO1lWCEDXHHRRim5nehLzjzzUhQcA+XONxNxZiZQKrMM98XMhyVP1yzX2VHnQ1fI+kbiueEEKObLE5dTMMpFuWm166V3+4pwIp/aMkipwjYQUELqOpARAPI5/QQhg9rpqDgnIB+aIi/wbNKw4a0XAaqRnDkUuR5rChtMeG0wu3px+Umeb7jqYsaJBSMMpCMvq6200kCfu1r38tMS9XvuNxn2QMYPc2YkY2QZOg5OVMOArKYJ0ALtoEHSPd6nqaMxw7xCmartdXVI5Ju+EhNjkWEqguPgJUva9VL0lKKtv7YGxzLvMAMZNCgMvoBsuUQsowJgk2ZNAhNkUZ3jNYyo3zwVvPB7oYF9ufWYRSC2X8RYZyc7hZAjxqUH4J+UGV57442mP9j7MjxIsK3VQLZjl1SXRRVst94pn0p2Y=
-  #Docker_PASS
-  - secure: TUr1Kcme+VdorKWujt9DLk05LJ5YC0Frv1DNjPVqjOs0VuUuUdhAHNBONvl7g3BcONuSzOlC+ppDIM2mmk7Nrm63Phw0DFd52t/ZCj3MAPlyshwoJvUlY8FX4zHI+xAP6feyzN9Bj2R8Mju7rygJjZQ6Zs4J+tCAcAchT6AiaxJKYRIcEut7asTlbtH0GDb4GzsmI3BuLKrqeWB3OcOr3z0A7W8IzVdDK9TzLgYTpXSc4ivuOVzFUO8myiQukavV4wX1rBnGqPH2PTudJQ0EuCKsEtMY5s3gKWM7v7lTXhtnluU/pfj31iieJj0i9Ai1cwAhXPcuvAxtSgT0kk/bixoRjLVH0nGCRBzhg7A+utNI9TceArESUHHKaOeq4sd3zowts//VKIgI1F5Ra0iNbnjI781u5O7yhM/IPSbycigyTrVZ0DMNU+8vBLN/XCiHpWT+Yr0+Jrdb7gaWonk0ZGsKgR+lNULx1fBmaBVdnQoBA0BqEHsLI2MevX1FF9WJD2eV925zeHRq8rbxVOAepiZU80FoS4yCt6W518ISeOYqOgwl+y//1AdCu9DR5VJCvCDUdnZmQNEiL9SiaX7mAGTN//FTd4h9qaElpNnNZlzoDa4bonhT93+vOJCFZoKtitTVOMiWrluqXSwQmSKWFzV2HRRNZnMOjmlWh0AsefQ=
+  - DOCKERHUB='ziwei000'
+  - IMAGE=`echo ${TRAVIS_REPO_SLUG#*/}`  
+  # DOCKER_USER
+  # DOCKER_PASS
+  - secure: GU5aPmR6j2pGpY6Z9irFUWzc3YmmxSpzM1hanWAYgB8BZFFXwgC9NBGl58V5OOiBK6g0qTkJ7Fhm7xsh9fjGu2mVHHpFcw6Dic3TzIGBZ69KBHB6T4P5QqGIeKgZps3hHMQiq0kWbwJG+TSD3BrFEtxoH7VGnXb8a5s2wrX0SGy+w+gAA0TmUvlzO/QQqzC5+whi6vxyVGKGetih3vVGP/Hovkq5K00nVW+zL3tAnMj8WsLVlXpWd6ROS5bTbw9KhjvROOAxZOiY9yr9HjV98q46KS8ZMjAdPW0c1byNnPfvqY+6QdyZ6pp44IGnLlQ88qFUl7Iobvec/cZ5gtDxG/mQHJh4FqEsXwnL8vivUbVC3O4oGWU7887whMgFIUuLPXLy8YbS3Zn8ZzxTO/v9gEl3ynmtFyGwD3NLedAcaYVOQLvpdkm41viQfkvdMmrK/i5u4oLOedLJxBxaV3gkWc//lu57jCY1Ot5JJi/3sajC3odrPNWlxeggPPT6baEtFQe2hTB5MDIZIGwLPj+Z+6U6QGc4528eDjWBTzF64RvYJni/qmxxxbHlXEa65zUwSQKzS7c7VASYQpOrMtWn1nGophN6I9nzQArdBUjLTYMGdXCfCseCwVrIzLNnj5I0iozo80dIxROeCIMDHPRFsMcaxikd4sinzBtMEsPtcpA=
+  - secure: x1AypIAku76rthaqSsMtWskEyp5i97pj1pDbXTIpA/uxU1e/Ine8PIpxqS2fqfIAQ8WAqZzPA7mp2aG1Wm8rPccyWGUQTKeSvICTJ/HgtTJ1J9DLqMbWR3HaLKb7mJl1R2NKU01GTNTThC4JXcDNcPhpgYBqnPJrjTNqubNZjtP3nfgzDzSi1dxuNt1y0+DKrarX7lK2+bLeMp58SON7iFOYik2fQrhOhbe6LmJJQMS5vlwH7yxq412HObdvfWOP+ajmoRCkBIlDcYGNV7IuuLc09d3j8aJ59mbvq88JLz302zORFyfepD3DsRukgmDaQKmeUhVykW0yE3r3755NBRCrU5BRVZZS1IT4xolvlxNNfqjRQFF9xGVfQyqwwDHG8NnpqeOvzS6r7vtONZsnessnstcbghFfKqODE4aZWQlivr3098hAhDhn3Gso2aUPR94ypooKRXzMY/CovfO4tsvv6a1Uf1RtnEvJ73l6+qPM8U/X2OFqbs3TFNRrCF9qbMyhotBtT7E5r67y5NriDqEW51vq7DiEF5i9KcZ7zg9rugZSSlTqdq2EXr9MqwSzndPaYVGvp1aGQNuT0XneT0L1dyuGV4k3Cc5S6uFzub5i0kXEFiugtK0r/mQHt7e6ZMbbM7Ut2Vp0a7LlRRt1QHsKSnLTWLXh3oE26nRcUPA=
 install:
-  - IMAGE=`echo ${TRAVIS_REPO_SLUG,,}`
-  - docker build -f Dockerfile.amd64 -t ${IMAGE}:${COMMIT} .
-  - docker run -d --name test ${IMAGE}:${COMMIT} communication-test-receive --cid=112
+- docker build -f Dockerfile.amd64 -t ${IMAGE}:${COMMIT} .
+- docker run -d --name test ${IMAGE}:${COMMIT} communication-test-receive --cid=112
 script:
-  - docker ps | grep -q test
-
+- docker ps | grep -q test
 after_success:
-  - IMAGE=`echo ${TRAVIS_REPO_SLUG,,}`
-  - docker --version  # document the version travis is using
-  - echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
-  - docker tag ${IMAGE}:COMMIT ${DOCKERHUB}/${IMAGE}:COMMIT
-  - docker push ${DOCKERHUB}/${IMAGE}:COMMIT
-
+- docker --version
+- echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
+- docker tag ${IMAGE}:${COMMIT} ${DOCKERHUB}/${IMAGE}:${COMMIT}
+- docker push ${DOCKERHUB}/${IMAGE}:${COMMIT}
 notifications:
   email:
     on_success: never
