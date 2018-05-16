@@ -7,7 +7,7 @@ services:
 
 install:
 - docker build -f Dockerfile.amd64 -t communication-test-receive .
-- docker run --name communication-test-receive test
+- docker run --name test communication-test-receive 
 
 script:
 - docker ps | grep -q test
