@@ -1,0 +1,14 @@
+sudo: required
+
+language: cpp
+
+services:
+  - docker
+
+install:
+- docker build -f Dockerfile.amd64 -t communication-test-receive .
+- docker run --name communication-test-receive test
+
+script:
+- docker ps | grep -q test
+
