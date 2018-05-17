@@ -22,7 +22,7 @@ env:
 install:
 - docker build -f Dockerfile.amd64 -t ${IMAGE}:${COMMIT} .
 #- docker run -d --name test ${IMAGE}:${COMMIT} communication-test-receive --cid=112
-script:
+script: skip
 #- docker ps | grep -q test
 after_success:
 - docker --version
